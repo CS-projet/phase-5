@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Download Encrypted File{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-lg-12 text-center">
+        <h2><i class="fas fa-download"></i> Download Encrypted File</h2>
+        <p class="lead">Your file has been successfully encrypted</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3><i class="fas fa-check-circle"></i> Encryption Successful</h3>
+            </div>
+            <div class="card-body">
+                <p>Your file has been encrypted using AI-enhanced encryption algorithms. Download your encrypted file using the button below.</p>
+                
+                <div class="alert alert-warning">
+                    <h5><i class="fas fa-exclamation-triangle"></i> Important: Save Your Encryption Key</h5>
+                    <p>You will need this key to decrypt your file later. Make sure to store it in a secure location.</p>
+                    
+                    {% if key_info %}
+                    <div class="card bg-light mb-3">
+                        <div class="card-header">
+                            <strong>Encryption Key ({{ key_info.type }})</strong>
+                        </div>
+                        <div class="card-body">
+                            <code class="user-select-all">{{ key_info.key }}</code>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="d-grid gap-2 mt-4">
+                    <a href="{{ url_for('download_file', file_type='encrypted') }}" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Encrypted File
+                    </a>
+                    <a href="{{ url_for('encrypt') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Encryption
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Download Security Report{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-lg-12 text-center">
+        <h2><i class="fas fa-file-alt"></i> Download Security Report</h2>
+        <p class="lead">Your AI-generated security report is ready</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3><i class="fas fa-check-circle"></i> Report Generation Complete</h3>
+            </div>
+            <div class="card-body">
+                <p>Your AI-generated encryption security report has been created successfully. Download your report using the button below.</p>
+                
+                <div class="alert alert-info">
+                    <h5><i class="fas fa-info-circle"></i> Report Features</h5>
+                    <p>This report includes AI-driven analysis of your encryption implementation, including:</p>
+                    <ul>
+                        <li>Key strength assessment</li>
+                        <li>Algorithm security analysis</li>
+                        <li>Vulnerability identification</li>
+                        <li>Custom security recommendations</li>
+                    </ul>
+                </div>
+                
+                <div class="d-grid gap-2 mt-4">
+                    <a href="{{ url_for('download_report_file') }}" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Report ({{ filename }})
+                    </a>
+                    <a href="{{ url_for('generate_report') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Report Generator
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

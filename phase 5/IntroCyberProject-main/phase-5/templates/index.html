@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}AI-Driven Encryption Tool - Home{% endblock %}
+
+{% block content %}
+<div class="row text-center mb-5">
+    <div class="col-lg-12">
+        <h1 class="display-4">AI-Enhanced Encryption Security</h1>
+        <p class="lead">Secure your data with advanced AI-powered encryption and analysis tools</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header text-center">
+                <i class="fas fa-lock feature-icon"></i>
+                <h3>Encryption</h3>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <p>Encrypt your files using AI-optimized encryption algorithms. Our system automatically selects the best parameters for your data.</p>
+                <ul>
+                    <li>AES-256 encryption with AI-generated keys</li>
+                    <li>RSA encryption for secure key exchange</li>
+                    <li>Elliptic Curve Cryptography support</li>
+                </ul>
+                <a href="{{ url_for('encrypt') }}" class="btn btn-primary mt-auto">Encrypt Files</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header text-center">
+                <i class="fas fa-unlock-alt feature-icon"></i>
+                <h3>Decryption</h3>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <p>Decrypt your files with ease. Our system verifies file integrity and detects potential tampering with AI analysis.</p>
+                <ul>
+                    <li>Support for all encryption methods</li>
+                    <li>AI-based tampering detection</li>
+                    <li>Integrity verification using digital signatures</li>
+                </ul>
+                <a href="{{ url_for('decrypt') }}" class="btn btn-primary mt-auto">Decrypt Files</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header text-center">
+                <i class="fas fa-file-alt feature-icon"></i>
+                <h3>Security Reports</h3>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <p>Generate comprehensive security reports for your encryption implementation. Identify vulnerabilities and get AI-powered recommendations.</p>
+                <ul>
+                    <li>Detailed strength analysis</li>
+                    <li>Vulnerability identification</li>
+                    <li>Actionable security recommendations</li>
+                </ul>
+                <a href="{{ url_for('generate_report') }}" class="btn btn-primary mt-auto">Generate Reports</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>About This Project</h3>
+            </div>
+            <div class="card-body">
+                <p>This AI-Driven Encryption Tool is the culmination of a comprehensive project that integrates artificial intelligence with cryptographic security. The project includes:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-microscope text-primary"></i> Phase 1: AI-Enhanced Cryptanalysis</h5>
+                        <p>Implementation of AI-based cryptanalysis to detect weaknesses in ciphers and identify patterns in encrypted text.</p>
+                        
+                        <h5><i class="fas fa-key text-primary"></i> Phase 2: AI-Powered Key Generation</h5>
+                        <p>Development of AI-generated cryptographic keys that optimize entropy and security.</p>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-cogs text-primary"></i> Phase 3: AI-Optimized Encryption</h5>
+                        <p>Implementation of encryption algorithms with AI-driven optimizations for speed and security.</p>
+                        
+                        <h5><i class="fas fa-shield-alt text-primary"></i> Phase 4: AI-Assisted Data Integrity</h5>
+                        <p>Implementation of AI-based integrity checks and tampering detection for encrypted data.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('documentation') }}" class="btn btn-info">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

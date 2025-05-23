@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Encrypt Files{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-lg-12 text-center">
+        <h2><i class="fas fa-lock"></i> AI-Enhanced Encryption</h2>
+        <p class="lead">Encrypt your files with AI-optimized security</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>File Encryption</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Select File to Encrypt</label>
+                        <input type="file" class="form-control" id="file" name="file" required>
+                        <div class="form-text">Allowed file types: {% for ext in allowed_extensions %}{{ ext }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="algorithm" class="form-label">Encryption Algorithm</label>
+                        <select class="form-select" id="algorithm" name="algorithm">
+                            <option value="aes" selected>AES-256 (Advanced Encryption Standard)</option>
+                            <option value="rsa">RSA-2048 (Rivest–Shamir–Adleman)</option>
+                            <option value="ecc">ECC-256 (Elliptic Curve Cryptography)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="add_integrity" name="add_integrity" checked>
+                        <label class="form-check-label" for="add_integrity">Add Integrity Protection</label>
+                        <div class="form-text">Adds checksums and digital signatures to detect tampering</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-lock"></i> Encrypt File
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>About Our Encryption Technology</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>AI-Enhanced Key Generation</h5>
+                        <p>Our system uses machine learning models to optimize cryptographic keys, ensuring maximum entropy and security against brute force attacks.</p>
+                        
+                        <h5>Quantum-Resistant Encryption</h5>
+                        <p>We implement post-quantum cryptographic techniques to ensure your data remains secure even against future quantum computing threats.</p>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5>AI-Optimized Algorithms</h5>
+                        <p>Our AI system dynamically selects the optimal encryption parameters based on your data characteristics, balancing security and performance.</p>
+                        
+                        <h5>Advanced Integrity Protection</h5>
+                        <p>We use AI-powered integrity verification methods that can detect even subtle tampering attempts in your encrypted data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

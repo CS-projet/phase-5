@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Decrypt Files{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-lg-12 text-center">
+        <h2><i class="fas fa-unlock-alt"></i> AI-Enhanced Decryption</h2>
+        <p class="lead">Decrypt your files with AI-powered security verification</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h3>File Decryption</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Select Encrypted File</label>
+                        <input type="file" class="form-control" id="file" name="file" required>
+                        <div class="form-text">Select the encrypted file you want to decrypt</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="key" class="form-label">Decryption Key</label>
+                        <input type="text" class="form-control" id="key" name="key" required>
+                        <div class="form-text">Enter the encryption key you received when the file was encrypted</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="algorithm" class="form-label">Encryption Algorithm</label>
+                        <select class="form-select" id="algorithm" name="algorithm">
+                            <option value="aes" selected>AES-256 (Advanced Encryption Standard)</option>
+                            <option value="rsa">RSA-2048 (Rivest–Shamir–Adleman)</option>
+                            <option value="ecc">ECC-256 (Elliptic Curve Cryptography)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="check_integrity" name="check_integrity" checked>
+                        <label class="form-check-label" for="check_integrity">Verify File Integrity</label>
+                        <div class="form-text">Uses AI to check for any tampering with the encrypted file</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-unlock"></i> Decrypt File
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>AI-Powered Tampering Detection</h3>
+            </div>
+            <div class="card-body">
+                <p>Our system uses advanced AI algorithms to detect if your encrypted files have been tampered with or modified:</p>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-check-circle text-success"></i> Multi-Layer Verification</h5>
+                        <p>Our system uses multiple verification methods including hash checks, digital signatures, and AI-based anomaly detection.</p>
+                        
+                        <h5><i class="fas fa-brain text-success"></i> Machine Learning Models</h5>
+                        <p>We've trained specialized ML models to detect even subtle modifications to encrypted data that traditional checksums might miss.</p>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5><i class="fas fa-shield-alt text-success"></i> Statistical Analysis</h5>
+                        <p>Our AI examines statistical properties of encrypted data to identify anomalies that could indicate tampering attempts.</p>
+                        
+                        <h5><i class="fas fa-chart-line text-success"></i> Confidence Scoring</h5>
+                        <p>The system provides a confidence score for integrity verification, giving you a clear assessment of your data's security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
